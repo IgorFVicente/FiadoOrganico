@@ -6,11 +6,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Consumidor consumidor = new Consumidor();
+		
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Informe o nome do cliente: ");
-		consumidor.nome = scanner.nextLine();
+		String nome = scanner.nextLine();
+		
+		System.out.print("Por favor, informe o telefone para contato: ");
+		String telefone = scanner.nextLine();
 		
 		int num;
 		do {
@@ -22,25 +25,23 @@ public class Main {
 			num = scanner.nextInt();
 		} while (num <= 0);
 
+		Consumidor consumidor = new Consumidor(nome, num, telefone);
 		
-		consumidor.fiados = new int[num];
-		
-		for (int i = 0; i < consumidor.fiados.length; i++) {
+		for (int i = 0; i < num; i++) {
 			int compra = i + 1;
 			System.out.print("Informe o valor da compra " + compra + ": ");
 			while (!scanner.hasNextInt()) {
 				System.out.println("Valor inválido. Tente Novamente para a compra " + compra + ": ");
 				scanner.next();
 			}
-			consumidor.fiados[i] = scanner.nextInt();
+			int fiado = scanner.nextInt();
+			consumidor.registrarFiado(fiado);
 		}
 		
-		int total = somaWhile(consumidor.fiados);
+		int total = consumidor.getFiado();
 		
 		if (total > 100) {
-			System.out.println("Cliente " + consumidor.nome + " deve: " + total + " - ganhou brinde");
-		} else {
-			System.out.println("Cliente " + consumidor.nome + " deve: " + total);
+			System.out.println("Cliente " + consumidor.getNome() + " (Telefone: " + consumidor.getTel() + ") deve: " + total);
 		}
 		
 	}
