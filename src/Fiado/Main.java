@@ -38,6 +38,8 @@ public class Main {
 			consumidor.registrarFiado(fiado);
 		}
 		
+		scanner.close();
+		
 		int total = consumidor.getFiado();
 		
 		if (total > 100) {
