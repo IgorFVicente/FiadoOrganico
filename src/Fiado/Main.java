@@ -6,8 +6,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		
-		
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Informe o nome do cliente: ");
 		String nome = scanner.nextLine();
@@ -43,7 +41,7 @@ public class Main {
 		int total = consumidor.getFiado();
 		
 		if (total > 100) {
-			System.out.println("Cliente " + consumidor.getNome() + " (Telefone: " + consumidor.getTel() + ") deve: " + total);
+			System.out.println("Cliente " + consumidor.getNome() + " (Telefone: " + consumidor.getTelefone() + ") deve: " + total);
 		}
 		
 	}

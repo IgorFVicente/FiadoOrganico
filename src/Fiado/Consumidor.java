@@ -24,11 +24,11 @@ public class Consumidor {
 		this.nome = nome;
 	}
 	
-	public String getTel() {
+	public String getTelefone() {
 		return this.telefone;
 	}
 	
-	public void setTel(String telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 	
